@@ -26,14 +26,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "12.21.0",
-      "onFail": "download"
-    }
-  },
-  "packageManager": "pnpm@12.21.0",
   "devDependencies": {
     "typescript": "^5.7.0"
   }
