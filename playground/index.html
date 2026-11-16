@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>kalakar, playground</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@new-ui/foundations@latest/dist/index.css" />
+  <link rel="stylesheet" href="./_index.css" />
+</head>
+<body data-new-ui-theme="light">
+  <header>
+    <h1>kalakar, playground</h1>
+    <input type="file" id="fileInput" accept=".svg,image/svg+xml" class="sr-only" />
+    <button id="openBtn">Open SVG</button>
+    <button id="pasteBtn">Paste</button>
+    <button id="sampleBtn">Sample</button>
+    <button id="copyBtn">Copy</button>
+    <button id="downloadBtn" class="primary">Download</button>
+  </header>
+
+  <main>
+    <section class="stage" aria-label="Preview">
+      <div class="toolbar">
+        <div class="tabs" role="tablist" aria-label="View">
+          <button role="tab" id="tabImage" aria-selected="true" aria-controls="imageView">Image</button>
+          <button role="tab" id="tabMarkup" aria-selected="false" aria-controls="markupView">Markup</button>
+        </div>
+        <button id="toggleBtn" aria-pressed="false" title="Show the original SVG">Original</button>
+        <div class="spacer"></div>
+        <button id="zoomOut" aria-label="Zoom out">&minus;</button>
+        <button id="zoomReset" aria-label="Reset zoom">100%</button>
+        <button id="zoomIn" aria-label="Zoom in">+</button>
+        <span class="stats" id="stats" aria-live="polite"></span>
+      </div>
+
+      <div class="view" id="imageView" role="tabpanel" aria-labelledby="tabImage" tabindex="0">
+        <div id="stageInner">
+          <div class="empty" id="emptyState">
+            <strong>Drop an SVG here</strong>
+            Open a file, paste markup, or load the sample.
+          </div>
+        </div>
+      </div>
+      <div class="view" id="markupView" role="tabpanel" aria-labelledby="tabMarkup" tabindex="0" hidden>
+        <pre id="markup"></pre>
+      </div>
+    </section>
+
+    <form class="settings" id="settings" aria-label="Style settings">
+      <!-- controls injected by app.js -->
+    </form>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

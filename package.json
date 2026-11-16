@@ -26,7 +26,7 @@
     "lint": "oxlint",
     "test": "vitest run",
     "test:watch": "vitest",
-    "playground": "pnpm build && node playground/sketch.mjs",
+    "playground": "pnpm build && node playground/serve.mjs",
     "prepublishOnly": "pnpm build"
   },
   "keywords": [

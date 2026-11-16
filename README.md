@@ -1,3 +1,5 @@
+![kalakar playground](playground/__cover.webp)
+
 # kalakar
 
 kalakar turns an SVG path into a hand-drawn, sketchy version. It accepts the `d` attribute of a path and returns new path `d` strings. kalakar is pure, runs without the DOM, and has zero runtime dependencies.
