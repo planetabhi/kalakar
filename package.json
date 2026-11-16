@@ -1,8 +1,9 @@
 {
   "name": "kalakar",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Turn SVG path data into a hand-drawn, sketchy look. Pure, DOM-free, and zero dependencies.",
   "type": "module",
+  "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,23 +11,48 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.js"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
-    "prepublishOnly": "pnpm build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup && tsc --emitDeclarationOnly --declaration --declarationMap false",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "playground": "pnpm build && node playground/sketch.mjs",
+    "prepublishOnly": "pnpm build"
   },
-  "keywords": [],
+  "keywords": [
+    "svg",
+    "sketchy",
+    "hand-drawn",
+    "icons",
+    "path"
+  ],
   "author": "@planetabhi",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planetabhi/kalakar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/planetabhi/kalakar/issues"
+  },
+  "homepage": "https://github.com/planetabhi/kalakar#readme",
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
-    "typescript": "^5.7.0"
+    "oxlint": "^1.93.0",
+    "tsup": "^9.0.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
   }
 }
