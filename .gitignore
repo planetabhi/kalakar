@@ -32,7 +32,16 @@ Thumbs.db
 coverage/
 .nyc_output/
 
+# Playground output (generated)
+playground/output/
+playground/preview/
+
 # Cache
 .cache/
 .turbo/
 .eslintcache
+
+# Agents
+plans/
+.agents/
+skills-lock.json
