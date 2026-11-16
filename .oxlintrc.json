@@ -5,5 +5,13 @@
     "correctness": "error",
     "suspicious": "warn"
   },
-  "ignorePatterns": ["dist", "plans", "playground/output", "playground/preview"]
+  "ignorePatterns": ["dist", "plans"],
+  "overrides": [
+    {
+      "files": ["playground/**"],
+      "rules": {
+        "require-post-message-target-origin": "off"
+      }
+    }
+  ]
 }
